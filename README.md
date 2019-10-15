@@ -67,15 +67,19 @@ Install : `curl -d '{"install_password":"Admin123"}' -H "Content-Type: applicati
 
 Seed : `curl -d '{"seed_password":"Admin123", "nb_fake":700}' -H "Content-Type: application/json" -X POST http://localhost:3001/seed`
 
-### Coté client
+### Coté client:
 
 `npm start`
 
 # Bonus
 Api restfull + Documentation des routes
+
 Seed Avatar en génération procédurale sex corespondant a l'image.
+
 Single page application.
+
 Socket pour les like notif en direct sur les meme page.
+
 Autocompétion des ville lors du changement de localisation.
 
 # Contributor
