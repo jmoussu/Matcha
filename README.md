@@ -60,7 +60,8 @@ Une base de donné sql est nessesaire les information de connection sont modifia
 ### Dans les dosiers server et client :
 `npm install`
 
-`node . coté server`
+### Coté server
+`node .`
 
 ### Lancer l'install et la seed :
 Install : `curl -d '{"install_password":"Admin123"}' -H "Content-Type: application/json" -X POST http://localhost:3001/install`
