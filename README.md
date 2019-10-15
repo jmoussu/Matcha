@@ -52,3 +52,5 @@ seed Avatar en généqtion prcédurale femmme homme image corespondante.
 Single page application.
 Socket pour les like notif en direct sur les meme page.
 Autocompétion des ville lors du changement de localisation.
+
+Contributor : https://gitlab.com/gigistone/
