@@ -45,3 +45,10 @@ Install : curl -d '{"install_password":"Admin123"}' -H "Content-Type: applicatio
 Seed : curl -d '{"seed_password":"Admin123", "nb_fake":700}' -H "Content-Type: application/json" -X POST http://localhost:3001/seed
 
 npm start coté client
+
+Liste de bonus :
+Api restfull + doc
+seed Avatar en généqtion prcédurale femmme homme image corespondante.
+Single page application.
+Socket pour les like notif en direct sur les meme page.
+Autocompétion des ville lors du changement de localisation.
