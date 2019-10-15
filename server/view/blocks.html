@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> Blocks </h1>
+	<p>
+		/add <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"<br>{ "id_profil": "1"}</li>
+			<li>out 200 : { message: "add block sucsess" }</li>
+			<li>out 401 : { message: "Unauthorized 401 : Bad token" }</li>
+			<li>out 400 : { message: "Bad request 400 : add block fail The request had bad syntax or was inherently impossible to be satisfied." }</li>
+			<li>out 401 : { message: "can't add self block" }</li>
+			<li>out 401 : { message: "Allready Blocked" }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

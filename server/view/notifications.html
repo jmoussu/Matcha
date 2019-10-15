@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> notifications </h1>
+	<p>
+		/set_read <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"</li>
+			<li>out 200 : { message: "set_read (notifications) sucsess" }</li>
+			<li>out 401 : { message: "Unauthorized 401 : Bad token" }</li>
+			<li>out 500 : { message: "Internal Server Error 500: request set_read (notifications) fail" }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

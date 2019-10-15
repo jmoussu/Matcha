@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> Research </h1>
+	<p>
+		/find <br>
+		<ul>
+			<li>
+				in : req.headers['authorization'] = "Bearer jwtoken" <br>
+				{ <br>
+					searchPref: ['male', 'female', 'other'], // List <br>
+					sex: 'male',  <br>
+					popularity: [0, 100], <br>
+					age: [18, 80], <br>
+					tags: ['tag1', 'tag2'], // list <br>
+					location: 20, // km range <br>
+				}
+			</li>
+			<li>out 200 : { result: [{id, age, firstname, bio, last_visit, gender, searchPreferences, pics, tags, online, distance}, {id, age, firstname, bio, last_visit, gender, searchPreferences, pics, tags, online, distance} ...] }</li>
+			<li>out 401 : { message: "Unauthorized 401 : Bad token" }</li>
+			<li>out 400 : { message: "Bad request 400 : research The request had bad syntax or was inherently impossible to be satisfied." }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

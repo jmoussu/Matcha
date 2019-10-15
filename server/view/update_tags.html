@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> Tags </h1>
+	<p>
+		/add <br>
+		<ul>
+			<li>in : { "tag": "tag3" }</li>
+			<li>out 200 : { "tags": [tag1, tag2, tag3] }</li>
+			<li>out 400 : { message: 'Bad request 400 : add tagg fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: Unauthorized 401 : Bad token }</li>
+			<li>out 401 : { message: "You can't have more tag" }</li>
+			<li>out 401 : { message: "You allready have this tag" }</li>
+		</ul>
+	</p>
+	<p>
+		/remove <br>
+		<ul>
+			<li>in : { "tag": "tag3" }</li>
+			<li>out 200 : { "tags": [tag1, tag2] }</li>
+			<li>out 400 : { message: 'Bad request 400 : remove tag The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: "Unauthorized 401 : Bad token" }</li>
+			<li>out 401 : { message: "Unauthorized 401 : tag dosn't exist" }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> Accounts </h1>
+	<p> /password_reset/ </p>
+	<p> /update/ </p>
+	<p>
+		/sign_up <br>
+		<ul>
+			<li>in : { <br> "email": "email@email.com",<br> "password": "password (regex)",<br> "firstname": "First",<br> "lastname": "Last",<br> "gender": "male / female / other", <br>"age": "16 to 80" <br>}</li>
+			<li>out 200 : { "message": "OK 200 : sing_up sucsess" }</li>
+			<li>out 400 : { "message": "Bad request 400 : sing_up fail The request had bad syntax or was inherently impossible to be satisfied." }</li>
+			<li>out 401 : { "message": "E-mail already exists" }</li>
+		</ul>
+	</p>
+	<p>
+		/sign_in <br>
+		<ul>
+			<li>in : { <br> "email": "email@email.com",<br> "password": "password" <br> (optional) "latitude": 48.42, "longitude": 2.2 <br>}</li>
+			<li> 200 : { <br>
+				 <ul> 
+					<li>"token": "JWT", </li> 
+					<li>"userId": 1, </li> 
+					<li>"notifications": [{.id .fullname .id_take .id_give .type .valide}, {.id .id_take .id_give .type .valide}], </li> 
+					<li>"account": {<br> "email": email@email.com, <br> "firstname": "firstname", <br> "lastname": "lastanme", <br> "age": 16 to 80, <br> "gender": "male / female / other",<br>"city": city}, </li> 
+					<li>"searchPreferences": {<br> "male": true, <br> "female": true, <br> "other": true <br>}, </li>
+					<li> "profile": {<br> "bio": "text", <br> "score": 0, <br> tags: ["tag1", "tag2"] <br> pics: [<br>{path: path/path.png, avatar: 0},<br> {path: path/path.png, avatar: 0}<br>]<br>} </li> }
+				</ul>
+			</li>
+			<li>out 400 : { "message": "Bad request 400 : sing_up fail The request had bad syntax or was inherently impossible to be satisfied." }</li>
+			<li>out 401 : { "message": "E-mail doesn't exists" }</li>
+			<li>out 401 : { "message": "Wrong Password" }</li>
+			<li>out 401 : { message: "Account hasn't been validated yet" }</li>
+		</ul>
+	</p>
+	<p>
+		/relog <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"</li>
+			<li> 200 : { <br>
+				<ul> 
+					<li>"token": "JWT", </li> 
+					<li>"userId": 1, </li> 
+					<li>"notifications": [{.id .fullname .id_take .id_give .type .valide}, {.id .id_take .id_give .type .valide}], </li> 
+					<li>"account": {<br> "email": email@email.com, <br> "firstname": "firstname", <br> "lastname": "lastanme", <br> "age": 16 to 80, <br> "gender": "male / female / other", <br> "city": city}, </li> 
+					<li>"searchPreferences": {<br> "male": true, <br> "female": true, <br> "other": true <br>}, </li>
+					<li> "profile": {<br> "bio": "text", <br> "score": 0, <br> tags: ["tag1", "tag2"] <br> pics: [<br>{path: path/path.png, avatar: 0},<br> {path: path/path.png, avatar: 0}<br>]<br>} </li> }
+				</ul>
+			</li>
+			<li>out 401 : { message: "Your connection has expired thank you to reconnect" } </li>
+			<li>out 401 : { message: "User dosen't exists or not corectly completed" }</li>
+			<li>out 401 : { message: "Account hasn't been validated yet" }</li>
+		</ul>
+	</p>
+	<p>
+		/verif_email <br>
+		<ul>
+			<li>in : { <br> "email": "email@email.com" <br> }</li>
+			<li>out 200 : { "message": "E-mail exists" }</li>
+			<li>out 400 : { "message": "Bad request 400 : sing_up fail The request had bad syntax or was inherently impossible to be satisfied." }</li>
+			<li>out 401 : { "message": "E-mail doesn't exists" }</li>
+		</ul>
+	</p>
+	<p>
+		/verif_registration_token <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"<br>{ "email": "email@email.fr"}</li>
+			<li>out 200 : { message: 'OK 200 : Validation sucsess' }</li>
+			<li>out 400 : { message: 'Bad request 400 : validation fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: "email or other doesn't exists in database" } </li>
+			<li>out 401 : { message: "bad token" }</li>
+			<li>out 401 : { message: "Account already validated" }</li>
+		</ul>
+	</p>
+	<p>
+		get /get/:user_id <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"<br>{ "id_user": "1"}</li>
+			<li> 200 : { <br>
+				<ul> 
+					<li>"account": {<br>"id": id,<br> "email": email@email.com, <br> "firstname": "firstname", <br> "lastname": "lastanme", <br> "age": 16 to 80 <br>"gender": "male / female / other", <br> "last_visit": datetime <br> "latitude": latitude, <br> "longitude": longitude, <br> "city": city}, </li> 
+					<li>"searchPreferences": {<br> "male": true, <br> "female": true, <br> "other": true <br>}, </li>
+					<li> "profile": {<br> "bio": "text", <br> "score": 0, <br> tags: ["tag1", "tag2"] <br> pics: [<br>{path: path/path.png, avatar: 0},<br> {path: path/path.png, avatar: 0}<br>]<br>} </li> }
+					<li> "online": 0</li>
+					<li> "hasLiked": 0</li>
+					<li> "liked": 0</li>
+				</ul>
+			</li>
+			<li>out 401 : { message: "bad token" }</li>
+			<li>out 404: { message: 'Not Found 404 : user not found' }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

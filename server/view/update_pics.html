@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> Pics </h1>
+	<p>
+		/add <br>
+		<ul>
+			<li>in : form data >> "img": file.png .jpeg </li>
+			<li>out 200 : { <br>pics: [<br>{path: path/path.png, avatar: 0},<br> {path: path/path.png, avatar: 0}<br>] <br>}</li>
+			<li>out 401 : { message: Unauthorized 401 : "Bad token" }</li>
+			<li>out 401 : { message: Unauthorized 401 : "Unauthorized format use png or jpeg" }</li>
+			<li>out 401 : { message: "Unauthorized to upload your file can be too big or upload key is bad" }</li>
+			<li>out 401 : { message: "Unauthorized none file found" }</li>
+		</ul>
+	</p>
+	<p>
+		/remove <br>
+		<ul>
+			<li>in : { "path": path/file.png }</li>
+			<li>out 200 : { <br>pics: [<br>{path: path/path.png, avatar: 0},<br> {path: path/path.png, avatar: 0}<br>] <br>}</li>
+			<li>out 401 : { message: Unauthorized 401 : "Bad token" }</li>
+			<li>out 401 : { message: 'Bad request 400 : remove pic fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: "This picture not exist or does not belong to you" }</li>
+		</ul>
+	</p>
+	<p>
+		/set_avatar <br>
+		<ul>
+			<li>in : { "path": path/file.png }</li>
+			<li>out 200 : { <br>pics: [<br>{path: path/path.png, avatar: 0},<br> {path: path/path.png, avatar: 0}<br>] <br>}</li>
+			<li>out 401 : { message: Unauthorized 401 : "Bad token" }</li>
+			<li>out 401 : { message: 'Bad request 400 : set avatar fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: "This picture not exist or does not belong to you" }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> chats </h1>
+	<p>
+		/add <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"<br>{ "id_profil": "1", "message": "Salut ça va ?"}</li>
+			<li>out 200 : { id: X, author: X, message: lala}</li>
+			<li>out 401 : { message: "Unauthorized 401 : Bad token" }</li>
+			<li>out 400 : { message: 'Bad request 400 : add chats fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: "You don't have match with this perssonne you can't chat" }</li>
+			<li>out 401 : { message: "You can't can't with a blocked user or or with a user who has blocked you" }</li>
+			<li> EMIT : const message_obj = { <br>
+				id: res_add_chat.insertId, <br>
+				author: UserId, <br>
+				message: message <br>
+			} <br>
+			io.to(socket_id).emit('message', message_obj);</li>
+		</ul>
+	</p>
+	<p>
+		/get <br>
+		<ul>
+			<li>in : req.headers['authorization'] = "Bearer jwtoken"<br>{ "id_profil": "1"}</li>
+			<li>out 200 : { "result": [{ .id .author .message .firstname } ...], "path": avatar de id_profil }</li>
+			<li>out 401 : { message: "Unauthorized 401 : Bad token" }</li>
+			<li>out 400 : { message: ''Bad request 400 : get chats fail The request had bad syntax or was inherently impossible to be satisfied.'' }</li>
+		</ul>
+	</p>
+</body>
+
+</html>

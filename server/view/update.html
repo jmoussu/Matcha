@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+</head>
+
+<body>
+	<h1> UPDATE </h1>
+	<p> /tags/ </p>
+	<p> /pics/ </p>
+	<p>
+		/info <br>
+		<ul>
+			<li>in : { <br> "email": "email@email.com", <br> "firstname": "first", <br> "lastname": "last", <br> "gender": "male / female / other", <br>, "age": 16 to 80 <br> }</li>
+			<li>out 200 : { <br> "email": "email@email.com", <br> "firstname": "first", <br> "lastname": "last", <br> "gender": "male / female / other", <br>, "age": 16 to 80 <br> }</li>
+			<li>out 400 : { message: 'Bad request 400 : update info fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: 'Unauthorized 401 : Bad token' }</li>
+		</ul>
+	</p>
+	<p>
+		/bio <br>
+		<ul>
+			<li>in : { <br>, "bio": "ma bio 255 char max" <br> }</li>
+			<li>out 200 : { <br>, "bio": "ma bio 255 char max" <br> }</li>
+			<li>out 400 : { message: 'Bad request 400 : update bio fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: 'Unauthorized 401 : Bad token' }</li>
+		</ul>
+	</p>
+	<p>
+		/password <br>
+		<ul>
+			<li>in : { <br> "oldPassword": "old_password123", <br> "password": "new_password" <br> }</li>
+			<li>out 200 : { message: 'OK 200 : update password sucsess' }</li>
+			<li>out 400 : { message: 'Bad request 400 : update password fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: 'Unauthorized 401 : Bad token' }</li>
+			<!-- <li>out 401 : { message: 'Unauthorized 401 : Bad password' }</li> -->
+		</ul>
+	</p>
+	<p>
+		/preferences <br>
+		<ul>
+			<li>in : {<br> "male": false, <br> "female": false, <br> "other": false <br>}</li>
+			<li>out 200 : {<br> "male": false, <br> "female": false, <br> "other": false <br>}</li>
+			<li>out 400 : { message: 'Bad request 400 : update password fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: 'Unauthorized 401 : Bad token' }</li>
+			<!-- <li>out 401 : { message: 'Unauthorized 401 : Bad password' }</li> -->
+		</ul>
+		/localisation <br>
+		<ul>
+			<li>in : {<br> "latitude": false, <br> "longitude": false, <br>}</li>
+			<li>out 200 : { message: "OK 200 : update localisation sucsess" }</li>
+			<li>out 401 : { message: 'Unauthorized 401 : Bad token' }</li>
+			<li>out 400 : { message: 'Bad request 400 : update localisation fail The request had bad syntax or was inherently impossible to be satisfied.' }</li>
+			<li>out 401 : { message: 'Unauthorized 401 :  latitude and longitude [-180 to 180]' }</li>
+		</ul>
+	</p>
+</body>
+
+</html>
