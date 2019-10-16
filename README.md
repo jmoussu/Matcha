@@ -14,53 +14,53 @@ API node et One page app React
 </p>
 
 # Feature
-Gestion de compte et d'utilisateur
+Gestion de comptes et d'utilisateurs
 
-Mail de validation et oublie de mot de pass
+Mail de validation et oublie de mot de passe
 
 Géolocalisation par navigateur ou ip
 
-Sélection des profil proposer en fonction des affinitée amoureuse et de la localisation
+Sélection des profils proposés en fonction des affinitées amoureuses et de la localisation
 
-Recherche profil par localisation ou autre parametre age tags ...
+Recherche profil par localisation ou autres parametres : âge tags ...
 
-System de score visible
+Systeme de score visible
 
-System de match
+Systeme de match
 
-Chat en direct dissponible apres un match
+Chat en direct disponible après un match
 
 notification en direct
 
-Hisstorique des perssonne ayant consulter votre profil
+Historique des personnes ayant consultées votre profil
 
-Hisstorique des perssonne ayant like votre profil
+Historique des personnes ayant like votre profil
 
 Setting panel
 
-Preference amoueuse
+Preferences amoureuses
 
-Donnée personel modifiable: Genre, Nom, Email ...
+Données personelles modifiables: Genre, Nom, Email ...
 
 Gestion de tags
 
-Upload de photo et System de photo de profil
+Upload de photos et Systeme de photo de profil
 
-Génération d'une seed de faux comptes pour nourire l'aplication
+Génération d'une seed de faux comptes pour nourrire l'application
 
 Seed aléatoire.
 
-Les image de profil sont fait en génération procédurale aléatoire en style 8bit
+Les images de profil sont faites en génération procédurale aléatoire en style 8bit
 
 
 # Comment l'utiliser ?
 
-Une base de donné sql est nessesaire les information de connection sont modifiable dans src/mysql_info.js
+Une base de donné sql est nessesaire les informations de connection sont modifiables dans src/mysql_info.js
 
 ### Dans les dosiers server et client :
 `npm install`
 
-### Coté server
+### Côté server
 `node .`
 
 ### Lancer l'install et la seed :
@@ -68,20 +68,20 @@ Install : `curl -d '{"install_password":"Admin123"}' -H "Content-Type: applicati
 
 Seed : `curl -d '{"seed_password":"Admin123", "nb_fake":700}' -H "Content-Type: application/json" -X POST http://localhost:3001/seed`
 
-### Coté client:
+### Côté client:
 
 `npm start`
 
 # Bonus
 Api restfull + Documentation des routes
 
-Seed Avatar en génération procédurale sex corespondant a l'image.
+Seed Avatar en génération procédurale sexe correspondant a l'image.
 
 Single page application.
 
-Socket pour les like notif en direct sur les meme page.
+Socket.io pour les likes et notif en direct sur les mêmes pages.
 
-Autocompétion des ville lors du changement de localisation.
+Autocomplétion du nom des villes lors du changement de localisation.
 
 # Contributor
 https://gitlab.com/gigistone/
