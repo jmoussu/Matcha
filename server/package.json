@@ -40,7 +40,7 @@
     "password-hash": "^1.2.2",
     "path": "^0.12.7",
     "rand-token": "^0.4.0",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "txtgen": "^2.2.3"
   }
 }
